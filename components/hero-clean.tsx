@@ -72,17 +72,6 @@ export function HeroClean() {
           ))}
         </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-in fade-in-50">
-        
-          <Link
-            href="/resume.pdf"
-            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-transparent border border-white text-foreground font-normal text-base hover:bg-foreground/5 transition-colors"
-          >
-            Download Resume
-          </Link>
-        </div>
-
 
       </div>
     </section>

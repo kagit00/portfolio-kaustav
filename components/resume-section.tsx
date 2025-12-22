@@ -199,7 +199,7 @@ export function ResumeSection() {
             {/* Action Buttons */}
             <div className="pt-4 flex flex-wrap gap-3">
               <a
-                href="/resume.pdf" // Replace with actual PDF link if available
+                href="https://drive.google.com/file/d/1Us-IxLrzi8hZvvkYcmDPQmKAVHySLTV9/view?usp=sharing" 
                 className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
               >
                 Download PDF
