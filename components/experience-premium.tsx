@@ -6,101 +6,82 @@ import { Github, ExternalLink, MapPin, Calendar } from "lucide-react"
 type Project = {
   name: string
   description: string
-  concepts: string[]
-  links?: { label: string; url: string; icon?: "repo" | "demo" }[]
+  bullets: string[]
+  techStack?: string
+  link?: { label: string; url: string }
 }
 
 type ExperienceItem = {
-  company: string
   role: string
+  company: string
   period: string
   location?: string
-  summary: string
-  projects: Project[]
+  summary?: string
+  projects?: Project[]
+  bullets?: string[]
   techStack?: string
 }
 
 const experiences: ExperienceItem[] = [
   {
-    company: "Independent Product Engineering",
-    role: "Backend Engineer",
+    role: "Backend Engineer (Systems) | Full-Time",
+    company: "",
     period: "Mar 2024 – Present",
     location: "Remote",
-    summary: "Production-grade prototypes for offline matching and ranking (benchmarked and validated)",
+    summary: "Dedicated full-time work on designing, benchmarking, and validating production-grade backend systems for large-scale data matching.",
     projects: [
       {
-        name: "ScheduleX - Graph-based Matchmaking Engine",
-        description:
-          "Engineered a high-throughput offline pipeline using LSH and Top-K Weighted Greedy refinement to produce over 300K matches in 10 minutes, scaling to 3M+ matches nightly across datasets of 100K+ nodes. Decoupled computation through Kafka, Parquet exports, and PostgreSQL-COPY based ingestion for high-throughput batch processing.",
-        concepts: ["Graphs", "Algorithms", "Multithreading", "Batch Processing", "Hashing"],
-        links: [{ label: "Repository", url: "#", icon: "repo" }],
+        name: "ScheduleX—Graph-Based Matching Engine",
+        description: "",
+        bullets: [
+          "Engineered a multi-stage matching pipeline generating 10M+ per cycle matches for 100k+ entities.",
+          "Leveraged LSH and LMDB streaming to eliminate O(n²) complexity and enable memory-efficient Top-K Weighted Greedy refinement.",
+          "Designed support for both symmetric and bipartite matching models within the same matching pipeline.",
+        ],
+        techStack: "Java 17, Spring Boot, Kafka, Redis, Docker, PostgreSQL, Parquet",
+        link: { label: "System Design & Implementation", url: "https://tinyurl.com/ss9jzyce" },
       },
       {
-        name: "FlairBit - Reels-First Dating Platform",
-        description:
-          "Architected a reels-first dating platform end-to-end, integrating a custom-built real-time chat system to boost retention and engagement. Scaled to 20K+ daily active users, processing 1M+ interactions/day with consistently sub-second response times.",
-        concepts: ["Graphs", "Algorithms", "Multithreading", "Real-Time Systems"],
-        links: [{ label: "Repository", url: "#", icon: "repo" }],
-      },
-      {
-        name: "Distributed Chat Microservice",
-        description:
-          "Designed and implemented a distributed, high-scale chat microservice using the Outbox Pattern and RabbitMQ STOMP relay for guaranteed message delivery with <300 ms P95 latency. Achieved horizontal scalability for millions of concurrent WebSocket sessions via atomic persistence and exponential backoff retries.",
-        concepts: ["Distributed Systems", "Messaging", "Fault Tolerance", "Real-Time Communication"],
-        links: [{ label: "Repository", url: "#", icon: "repo" }],
+        name: "FlairBit—A Reels First Dating Platform",
+        description: "",
+        bullets: [
+          "Built FlairBit as a consumer-facing platform on top of the ScheduleX matching engine, separating real-time UX workflows from batch and graph-heavy matching computation.",
+          "Implemented a progressive profiling workflow for multi-persona user journeys and personalized media feeds, achieving ~40% latency reduction via tiered caching.",
+          "Designed an event-driven architecture for profile synchronization, match delivery, and secure passwordless authentication, using retries, rate limiting, fraud prevention, and the Outbox Pattern to ensure reliable, at-least-once message delivery under load.",
+        ],
+        techStack: "Java 17, Spring Boot, Kafka, MinIO, Redis, Docker, PostgreSQL, Parquet",
+        link: { label: "System Design & Implementation", url: "https://tinyurl.com/ss9jzyce" },
       },
     ],
   },
   {
+    role: "Software Developer | Full-Time",
     company: "TechBulls SoftTech Pvt. Ltd",
-    role: "Software Developer",
     period: "Jun 2022 – Dec 2023",
     location: "Pune (Hybrid)",
-    summary:
-      "Standards-compliant financial APIs and core Sanctions Screening engines in high-compliance enterprise environment",
-    projects: [
-      {
-        name: "Account Aggregator & Sanctions Screening APIs",
-        description:
-          "Developed standards-compliant financial APIs aligned with Account Aggregator and FCC Sanctions Screening specifications, enabling product teams to ship features 20% faster while significantly strengthening data-sharing security.",
-        concepts: ["API Design", "Compliance", "Security"],
-        links: [{ label: "Demo", url: "#", icon: "demo" }],
-      },
-      {
-        name: "FIU APIs & Sanctions Screening Enhancement",
-        description:
-          "Enhanced FIU APIs and Sanctions Screening engines, improving overall performance by 15–25% and reducing end-user latency across distributed components.",
-        concepts: ["Performance Optimization", "Distributed Systems"],
-      },
-      {
-        name: "GitLab CI/CD Pipeline Automation",
-        description:
-          "Collaborated with DevOps and QA teams to automate GitLab-based CI/CD pipelines for zero-downtime deployments, cutting release cycles by 20% and maintaining 99.9% service uptime.",
-        concepts: ["DevOps", "CI/CD", "Infrastructure"],
-      },
+    bullets: [
+      "Built and evolved standards-compliant financial APIs aligned with RBI Account Aggregator and FCC Sanctions Screening specifications, contributing to 20% faster feature delivery by enabling product teams to iterate safely within sprint-based GitLab workflows.",
+      "Owned backend improvements across FIU APIs and sanctions screening pipelines, driving 15–25% performance gains through profiling, validation, and iterative optimization of distributed components.",
+      "Worked closely with QA, DevOps, and dependent teams to define API contracts, error handling, and validation rules, reducing release friction and improving production stability through structured defect tracking and fix validation.",
+      "Documented requirement changes, technical decisions, and system tradeoffs in tickets and lightweight design notes, supporting predictable delivery under evolving regulatory and operational constraints.",
     ],
-    techStack:
-      "Java 8 · Spring Framework · Redis · AngularJS · PostgreSQL · Oracle · Highcharts · Hazelcast · SQL · HTML · CSS · LESS · JSON · MyBatis · Liquibase",
+    techStack: "Java 8, Spring Framework, Redis, AngularJS, PostgreSQL, Oracle, Highcharts, Hazelcast, SQL, HTML, CSS, LESS, JSON, MyBatis, Liquibase",
   },
 ]
 
 function ActionButton({
   href,
   children,
-  icon = "demo",
 }: {
   href: string
   children: React.ReactNode
-  icon?: "repo" | "demo"
 }) {
-  const Icon = icon === "repo" ? Github : ExternalLink
-
   return (
     <a
       href={href}
-      className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-full bg-primary/10 text-primary hover:bg-primary/20 border border-primary/30 hover:border-primary/60 transition-all duration-200 hover:shadow-sm"
+      className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-full bg-primary/10 text-primary hover:bg-primary/20 border border-primary/30 hover:border-primary/60 transition-all duration-200 hover:shadow-sm underline"
     >
-      <Icon className="w-3 h-3" />
+      <ExternalLink className="w-3 h-3" />
       {children}
     </a>
   )
@@ -110,7 +91,7 @@ export function ExperiencePremium() {
   return (
     <section id="experience" className="mx-auto max-w-5xl px-10 py-16 md:py-24">
       {/* Section Header */}
-      <div className="mb-16 ">
+      <div className="mb-16">
         <h2 className="text-3xl md:text-5xl font-thin text-foreground mb-3 tracking-tight leading-relaxed">Experience</h2>
         <p className="text-lg text-muted-foreground max-w-2xl font-light">
           Production-grade projects and professional roles delivering measurable impact
@@ -151,50 +132,58 @@ export function ExperiencePremium() {
                   </div>
                 </div>
 
-                {/* Summary */}
-                <p className="text-base text-muted-foreground/90 mb-6 leading-relaxed font-light">{exp.summary}</p>
+                {/* Summary (only for first role) */}
+                {exp.summary && (
+                  <p className="text-base text-muted-foreground/90 mb-6 leading-relaxed font-light">{exp.summary}</p>
+                )}
 
-                {/* Projects Timeline */}
-                <div className="space-y-5">
-                  {exp.projects.map((project, projIdx) => (
-                    <div
-                      key={project.name}
-                      className=" hover:bg-primary/5 rounded-r-lg pl-4 py-3 px-4 transition-all duration-300"
-                    >
-                      {/* Project Header */}
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-2">
-                        <h4 className="font-bold text-sm text-foreground">{project.name}</h4>
-                        {project.links && project.links.length > 0 && (
-                          <div className="flex flex-wrap gap-2">
-                            {project.links.map((link) => (
-                              <ActionButton key={link.label} href={link.url} icon={link.icon}>
-                                {link.label}
-                              </ActionButton>
-                            ))}
+                {/* Projects (only for first role) */}
+                {exp.projects && (
+                  <div className="space-y-8">
+                    {exp.projects.map((project) => (
+                      <div
+                        key={project.name}
+                        className="hover:bg-primary/5 rounded-r-lg pl-4 py-4 px-4 transition-all duration-300"
+                      >
+                        {/* Project Header */}
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
+                          <h4 className="font-bold text-foreground">{project.name}</h4>
+                          {project.link && (
+                            <ActionButton href={project.link.url}>
+                              {project.link.label}
+                            </ActionButton>
+                          )}
+                        </div>
+
+                        {/* Bullets */}
+                        <ul className="list-disc list-inside space-y-2 text-foreground/85 text-medium font-thin leading-relaxed mb-4">
+                          {project.bullets.map((bullet, i) => (
+                            <li key={i}>{bullet}</li>
+                          ))}
+                        </ul>
+
+                        {/* Tech Stack */}
+                        {project.techStack && (
+                          <div className="text-sm text-muted-foreground">
+                            <span className="font-semibold">Tech Stack:</span> {project.techStack}
                           </div>
                         )}
                       </div>
+                    ))}
+                  </div>
+                )}
 
-                      {/* Project Description */}
-                      <p className="text-medium font-thin text-foreground/85 mb-3 leading-relaxed">{project.description}</p>
+                {/* General bullets (for second role) */}
+                {exp.bullets && (
+                  <ul className="list-disc list-inside space-y-2 text-foreground/85 text-medium font-thin leading-relaxed mb-6">
+                    {exp.bullets.map((bullet, i) => (
+                      <li key={i}>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
 
-                      {/* Concepts as inline tags */}
-                      <div className="flex flex-wrap gap-2">
-                        {project.concepts.map((concept, idx) => (
-                          <span
-                            key={concept}
-                            className="inline-block px-2.5 py-1 text-xs font-medium text-primary/80 bg-primary/8 rounded-full border border-primary/20 hover:border-primary/40 transition-colors"
-                          >
-                            {concept}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Tech Stack for second role */}
-                {exp.techStack && (
+                {/* Tech Stack (for second role) */}
+                {exp.techStack && !exp.projects && (
                   <div className="mt-6 pt-6 border-t border-border/40">
                     <p className="text-xs font-bold text-primary/70 uppercase tracking-widest mb-3">Tech Stack</p>
                     <p className="text-sm text-foreground/75 leading-relaxed font-light">{exp.techStack}</p>
