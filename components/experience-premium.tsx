@@ -39,7 +39,7 @@ const experiences: ExperienceItem[] = [
           "Designed support for both symmetric and bipartite matching models within the same matching pipeline.",
         ],
         techStack: "Java 17, Spring Boot, Kafka, Redis, Docker, PostgreSQL, Parquet",
-        link: { label: "System Design & Implementation", url: "https://tinyurl.com/ss9jzyce" },
+        link: { label: "Repo", url: "https://github.com/kagit00/schedule_x/tree/master" },
       },
       {
         name: "FlairBit—A Reels First Dating Platform",
@@ -50,7 +50,7 @@ const experiences: ExperienceItem[] = [
           "Designed an event-driven architecture for profile synchronization, match delivery, and secure passwordless authentication, using retries, rate limiting, fraud prevention, and the Outbox Pattern to ensure reliable, at-least-once message delivery under load.",
         ],
         techStack: "Java 17, Spring Boot, Kafka, MinIO, Redis, Docker, PostgreSQL, Parquet",
-        link: { label: "System Design & Implementation", url: "https://tinyurl.com/ss9jzyce" },
+        link: { label: "Repo", url: "https://github.com/kagit00/flairbit/tree/master" },
       },
     ],
   },
