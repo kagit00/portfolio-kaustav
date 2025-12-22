@@ -3,10 +3,11 @@
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
-import { MailIcon, GithubIcon } from "lucide-react"
+import { Mail, Github, Menu, X } from "lucide-react"
 
 export function NavClean() {
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -14,104 +15,123 @@ export function NavClean() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
+  const navLinks = [
+    { href: "#experience", label: "experience" },
+    { href: "#projects", label: "projects" },
+    { href: "#skills", label: "skills" },
+    { href: "#certifications", label: "certifications" },
+  ]
+
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-colors border-b",
+        "sticky top-0 z-50 transition-all duration-300 border-b",
         scrolled
-          ? "bg-background text-foreground border-border"
-          : "bg-background/70 backdrop-blur text-foreground border-transparent",
+          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 text-foreground border-border"
+          : "bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/70 text-foreground border-transparent",
       )}
       role="banner"
     >
-      <nav className="mx-auto font-bold flex max-w-6xl items-center justify-between px-4 py-3 md:py-4" aria-label="Primary">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4" aria-label="Primary">
         <Link href="/" className="flex items-center gap-2 font-semibold">
-          <span
-            className={cn(
-              "text-sm lowercase tracking-widest white",
-              scrolled ? "text-foreground" : "text-primary-foreground",
-            )}
-          >
-            Kaustav
-          </span>
+          <span className="text-sm lowercase tracking-widest">kaustav</span>
         </Link>
-        <div className="flex items-center gap-3 md:gap-6 text-sm">
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-6 text-sm">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={cn(
+                "lowercase tracking-[0.15em] transition-colors",
+                scrolled
+                  ? "text-muted-foreground hover:text-foreground"
+                  : "text-muted-foreground/90 hover:text-foreground",
+              )}
+            >
+              {link.label}
+            </a>
+          ))}
+
           <a
-            href="#experience"
+            href="mailto:kaustavofficial09@gmail.com"
             className={cn(
-              "lowercase tracking-[0.15em] transition-colors",
-              scrolled
-                ? "text-muted-foreground hover:text-foreground"
-                : "text-primary-foreground/90 hover:text-primary-foreground",
-            )}
-          >
-            Experience
-          </a>
-          <a
-            href="#projects"
-            className={cn(
-              "lowercase tracking-[0.15em] transition-colors",
-              scrolled
-                ? "text-muted-foreground hover:text-foreground"
-                : "text-primary-foreground/90 hover:text-primary-foreground",
-            )}
-          >
-            Projects
-          </a>
-          <a
-            href="#skills"
-            className={cn(
-              "lowercase tracking-[0.15em] transition-colors",
-              scrolled
-                ? "text-muted-foreground hover:text-foreground"
-                : "text-primary-foreground/90 hover:text-primary-foreground",
-            )}
-          >
-            skills
-          </a>
-          <a
-            href="#certifications"
-            className={cn(
-              "lowercase tracking-[0.15em] transition-colors",
-              scrolled
-                ? "text-muted-foreground hover:text-foreground"
-                : "text-primary-foreground/90 hover:text-primary-foreground",
-            )}
-          >
-            Certifications
-          </a>
-          <a
-            href="mailto:you@example.com"
-            className={cn(
-              "rounded-full p-2 shadow-sm transition-colors",
+              "rounded-full p-2.5 shadow-sm transition-colors",
               scrolled
                 ? "bg-primary text-primary-foreground hover:opacity-90"
-                : "bg-white text-primary hover:bg-white/90",
+                : "bg-primary text-primary-foreground hover:opacity-90",
             )}
-            aria-label="Email"
-            title="Email"
+            aria-label="Email me"
           >
-            <MailIcon className="h-5 w-5" />
+            <Mail className="h-5 w-5" />
             <span className="sr-only">Email</span>
           </a>
+
           <a
-            href="https://github.com/your-handle"
+            href="https://github.com/kagit00"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-              "rounded-full p-2 border transition-colors",
+              "rounded-full p-2.5 border transition-colors",
               scrolled
                 ? "border-border text-foreground hover:bg-secondary"
-                : "border-white/70 text-primary-foreground hover:bg-white/10",
+                : "border-border/70 text-foreground hover:bg-secondary/50",
             )}
-            aria-label="GitHub"
-            title="GitHub"
+            aria-label="GitHub profile"
           >
-            <GithubIcon className="h-5 w-5" />
+            <Github className="h-5 w-5" />
             <span className="sr-only">GitHub</span>
           </a>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </nav>
+
+      {/* Mobile Navigation Drawer */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur">
+          <div className="flex flex-col items-start space-y-4 px-6 py-6 text-sm">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="lowercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+
+            <div className="flex items-center gap-4 pt-4">
+              <a
+                href="mailto:kaustavofficial09@gmail.com"
+                className="rounded-full p-3 bg-primary text-primary-foreground shadow-sm hover:opacity-90 transition-opacity"
+                aria-label="Email me"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+
+              <a
+                href="https://github.com/kagit00"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full p-3 border border-border hover:bg-secondary transition-colors"
+                aria-label="GitHub profile"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   )
 }
