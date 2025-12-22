@@ -65,7 +65,7 @@ export function SystemDesignShowcase({ projectKey, onClose }: SystemDesignShowca
   }
 
   return (
-    <div className="relative text-foreground p-6 md:p-16 lg:p-20 max-w-[1400px] mx-auto overflow-y-auto h-full">
+    <div className="relative no-scrollbar text-foreground p-6 md:p-16 lg:p-20 max-w-[1400px] mx-auto overflow-y-auto h-full">
       {onClose && (
         <button
           onClick={onClose}

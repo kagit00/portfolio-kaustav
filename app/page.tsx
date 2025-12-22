@@ -14,7 +14,6 @@ export default function Page() {
     <main>
       <NavClean />
       <HeroClean />
-      {/* Marketing/agency sections removed */}
       <WorkGrid />
       <SkillsSection />
       <ExperiencePremium />

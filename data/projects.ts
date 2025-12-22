@@ -53,7 +53,7 @@ export const projectDatabase: ProjectDatabase = {
           docs: "https://github.com/kagit00/schedule_x/tree/master/docs",
           github: "https://github.com/kagit00/schedule_x/tree/master",
       },
-      year: 2025,
+      year: 2024,
     category: "Backend",
     description: ""
   },
@@ -103,8 +103,10 @@ export const projectDatabase: ProjectDatabase = {
   ],
 
   links: {
-    github: "https://github.com/kagit00/flarebit",
-  },
+          demo: "https://github.com/kagit00/schedule_x",
+          docs: "https://github.com/kagit00/schedule_x/tree/master/docs",
+          github: "https://github.com/kagit00/schedule_x/tree/master",
+      },
 
   year: 2025,
   category: "Backend",
@@ -156,8 +158,10 @@ Chats: {
   ],
 
   links: {
-    github: "https://github.com/kagit00/chat-microservice",
-  },
+          demo: "https://github.com/kagit00/schedule_x",
+          docs: "https://github.com/kagit00/schedule_x/tree/master/docs",
+          github: "https://github.com/kagit00/schedule_x/tree/master",
+      },
 
   year: 2025,
   category: "Distributed",
@@ -211,8 +215,10 @@ Chats: {
     ],
 
     links: {
-      github: "https://github.com/your-repo/ai-resume-builder",
-    },
+          demo: "https://github.com/kagit00/schedule_x",
+          docs: "https://github.com/kagit00/schedule_x/tree/master/docs",
+          github: "https://github.com/kagit00/schedule_x/tree/master",
+      },
     year: 2024,
     category: "Full-Stack",
     description: ""

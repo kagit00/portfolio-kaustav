@@ -110,7 +110,7 @@ export function ExperiencePremium() {
   return (
     <section id="experience" className="mx-auto max-w-5xl px-10 py-16 md:py-24">
       {/* Section Header */}
-      <div className="mb-16">
+      <div className="mb-16 ">
         <h2 className="text-3xl md:text-5xl font-thin text-foreground mb-3 tracking-tight leading-relaxed">Experience</h2>
         <p className="text-lg text-muted-foreground max-w-2xl font-light">
           Production-grade projects and professional roles delivering measurable impact
