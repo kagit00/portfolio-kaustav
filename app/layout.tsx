@@ -12,7 +12,7 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "700", "100"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
-  title: "v0 App",
+  title: "Portfolio",
   description: "Created with v0",
   generator: "v0.app",
 }
