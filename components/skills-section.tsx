@@ -1,15 +1,12 @@
 import { SkillCard } from "./skill-card"
 
 const skills = [
-  { name: "TypeScript", level: "Advanced" },
-  { name: "React", level: "Advanced" },
-  { name: "Next.js", level: "Expert" },
-  { name: "Tailwind CSS", level: "Advanced" },
-  { name: "Node.js", level: "Advanced" },
+  { name: "Java", level: "Advanced" },
+  { name: "Spring", level: "Advanced" },
+  { name: "Redis", level: "Expert" },
+  { name: "Kafka", level: "Advanced" },
   { name: "PostgreSQL", level: "Proficient" },
-  { name: "GraphQL", level: "Proficient" },
   { name: "Docker", level: "Proficient" },
-  { name: "AWS", level: "Proficient" },
   { name: "Git", level: "Advanced" },
 ]
 

@@ -10,8 +10,8 @@ export const projectDatabase: ProjectDatabase = {
       problemStatement: "Built to solve large-scale entity matching problems (dating, jobs, logistics, marketplaces) without real-time compute explosion or O(n²) similarity scans.",
 
       metrics: [
-          { value: "3M+", label: "edges generated/hour" },
-          { value: "100k+", label: "Nodes expanded into match graph" },
+          { value: "1M+", label: "edges generated/hour" },
+          { value: "20k+", label: "Nodes expanded into match graph" },
           { value: "99.99%", label: "Processing Reliability" },
           { value: "4-Stage", label: "Pipeline Architecture" },
       ],
@@ -152,7 +152,7 @@ Chats: {
   stack: [
     "Java",
     "RabbitMQ",
-    "Postgre",
+    "Postgres",
     "WebSockets",
     "Redis",
   ],
@@ -208,10 +208,9 @@ Chats: {
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
-      "Postgre",
-      "Redis",
-      "LLMs",
-      "Docker",
+      "Postgres",
+      "Java",
+      "Spring Boot",
     ],
 
     links: {

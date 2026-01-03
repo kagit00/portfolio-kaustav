@@ -84,7 +84,7 @@ export function ResumeSection() {
             <section>
               <h3 className="text-base font-semibold tracking-tight mb-3">Summary</h3>
               <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
-                Backend Engineer specializing in high-performance architecture and data-intensive systems. Proven ability to architect scalable backend systems and offline pipelines, including a matching engine handling 10M+ daily operations using Java 17, Kafka, and Parquet. Experienced in optimizing financial APIs for latency and translating complex, ambiguous requirements into production-grade solutions.
+                Backend Engineer specializing in high-performance architecture and data-intensive systems. Proven ability to architect scalable backend systems and offline pipelines, including a matching engine handling millions of operations using Java 17, Kafka, and Parquet. Experienced in optimizing financial APIs for latency and translating complex, ambiguous requirements into production-grade solutions.
               </p>
             </section>
 
@@ -117,7 +117,7 @@ export function ResumeSection() {
                         </Link>
                       </div>
                       <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                        <li>Engineered a multi-stage matching pipeline generating <strong>10M+</strong> per cycle matches for <strong>100k+</strong> entities.</li>
+                        <li>Engineered a multi-stage matching pipeline generating <strong>7M+</strong> per cycle matches for <strong>20k+</strong> entities.</li>
                         <li>Leveraged <strong>LSH</strong> and <strong>LMDB</strong> streaming to eliminate <strong>O(n²)</strong> complexity and enable memory-efficient <strong>Top-K Weighted Greedy</strong> refinement.</li>
                         <li>Designed support for both <strong>symmetric</strong> and <strong>bipartite</strong> matching models within the same matching pipeline.</li>
                       </ul>

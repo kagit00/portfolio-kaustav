@@ -34,7 +34,7 @@ const experiences: ExperienceItem[] = [
         name: "ScheduleX—Graph-Based Matching Engine",
         description: "",
         bullets: [
-          "Engineered a multi-stage matching pipeline generating 10M+ per cycle matches for 100k+ entities.",
+          "Engineered a multi-stage matching pipeline generating 7M+ per cycle matches for 20k+ entities.",
           "Leveraged LSH and LMDB streaming to eliminate O(n²) complexity and enable memory-efficient Top-K Weighted Greedy refinement.",
           "Designed support for both symmetric and bipartite matching models within the same matching pipeline.",
         ],

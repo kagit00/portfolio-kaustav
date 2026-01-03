@@ -29,7 +29,7 @@ export function NavPro() {
       >
         <Link href="/" className="font-medium tracking-tight text-foreground">
           <span className="sr-only">Home</span>
-          <span className="text-lg">Your Name</span>
+          <span className="text-lg">Kaustav</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-6 text-sm">

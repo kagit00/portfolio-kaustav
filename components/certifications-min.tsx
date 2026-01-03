@@ -14,18 +14,7 @@ type Cert = {
 
 export function CertificationsMinimal() {
   const certs: Cert[] = [
-    {
-      title: "AWS Certified Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      year: "2024",
-      url: "https://aws.amazon.com/verification/",
-      highlights: [
-        "Core AWS services (EC2, S3, VPC, IAM, Lambda)",
-        "Cloud architecture best practices and shared responsibility model",
-        "Basic pricing, billing, and cost optimization strategies",
-        "Security fundamentals and compliance overview",
-      ],
-    },
+
     {
       title: "LeetCode 300+ Problems Solved",
       issuer: "LeetCode",
