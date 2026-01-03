@@ -43,34 +43,6 @@ export function HeroClean() {
           </p>
         </div>
 
-        {/* Key Highlights */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 animate-in fade-in-50">
-          {[{
-            label: "Throughput",
-            value: "3M+",
-            sub: "Matches / Night",
-          }, {
-            label: "Latency",
-            value: "<300ms",
-            sub: "P95 Response",
-          }, {
-            label: "Uptime",
-            value: "99.9%",
-            sub: "Service Level",
-          }, {
-            label: "Experience",
-            value: "2+ yrs",
-            sub: "Professional",
-          }].map((item) => (
-            <div key={item.label} className="group">
-              <p className="text-xs md:text-sm font-semibold text-primary/80 uppercase tracking-widest mb-1.5">
-                {item.label}
-              </p>
-              <p className="text-xl md:text-3xl font-bold text-foreground">{item.value}</p>
-              <p className="text-xs text-muted-foreground/70 mt-1">{item.sub}</p>
-            </div>
-          ))}
-        </div>
 
 
       </div>
