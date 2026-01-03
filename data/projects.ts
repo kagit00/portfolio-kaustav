@@ -152,7 +152,7 @@ Chats: {
   stack: [
     "Java",
     "RabbitMQ",
-    "Postgres",
+    "Postgre",
     "WebSockets",
     "Redis",
   ],
@@ -170,56 +170,55 @@ Chats: {
 
 
   "AI Resume Builder": {
-    title: "AI Resume Builder",
-    tagline:
-      "AI-powered SaaS platform for generating job-specific resumes using modern LLM workflows.",
+    "title": "AI Resume Builder",
+    "tagline": "LLM-assisted resume generation tool with full-stack CRUD workflows.",
 
-    role: "Full-stack developer (solo)",
+    "role": "Full-stack developer (solo)",
 
-    problemStatement:
-      "Built to help job seekers tailor resumes to specific job descriptions automatically, reducing manual effort and improving interview shortlisting rates.",
+    "problemStatement":
+      "Built to explore automating resume tailoring based on job descriptions, reducing repetitive manual edits while experimenting with LLM-assisted content generation.",
 
-    metrics: [
-      { value: "50K+", label: "Users" },
-      { value: "98%", label: "User Satisfaction" },
-      { value: "Next.js", label: "Frontend" },
-      { value: "Python", label: "Backend" },
+    "metrics": [
+      { "value": "Full-Stack", "label": "Project Type" },
+      { "value": "LLM Integration", "label": "Core Focus" },
+      { "value": "Spring Boot", "label": "Backend" },
+      { "value": "Next.js", "label": "Frontend" }
     ],
 
-    overview:
-      "A SaaS platform that analyzes job descriptions and generates optimized resumes using LLM-based content generation, exposed through a clean and responsive web interface.",
+    "overview":
+      "A full-stack application that accepts resumes and job descriptions, generates suggested resume content using structured LLM prompts, and manages iterative edits through standard CRUD workflows.",
 
-    architecture:
-      "Service-oriented architecture with a Next.js frontend, FastAPI-based backend for LLM orchestration, Redis for caching repeated prompts, and PostgreSQL for persistent user and document data. Deployed via Docker with CI/CD automation.",
+    "architecture":
+      "Monolithic architecture with a Next.js frontend and a Spring Boot backend responsible for resume management, prompt construction, and LLM API integration. PostgreSQL used for persistence, with a local Docker-based development setup.",
 
-    designHighlights: [
-      "Separated LLM orchestration logic from API layer to allow future model swapping.",
-      "Used Redis caching to reduce redundant LLM calls and control inference cost.",
-      "Designed prompt templates to ensure deterministic and structured resume output.",
+    "designHighlights": [
+      "Separated prompt construction logic from controller and persistence layers for clarity and maintainability.",
+      "Designed structured prompt templates to improve consistency of generated resume content.",
+      "Implemented basic caching to avoid repeated LLM calls for identical inputs."
     ],
 
-    keyChallenges: [
-      "Managing LLM latency and cost under concurrent user load.",
-      "Ensuring consistent output quality across diverse job descriptions.",
-      "Securing user-uploaded resume data.",
+    "keyChallenges": [
+      "Handling inconsistent LLM output formats across different job descriptions.",
+      "Balancing prompt structure with flexibility in generated content.",
+      "Managing resume versioning during iterative user edits."
     ],
 
-    stack: [
+    "stack": [
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
-      "Postgres",
       "Java",
       "Spring Boot",
+      "PostgreSQL"
     ],
 
-    links: {
-          demo: "https://github.com/kagit00/schedule_x",
-          docs: "https://github.com/kagit00/schedule_x/tree/master/docs",
-          github: "https://github.com/kagit00/schedule_x/tree/master",
-      },
-    year: 2024,
-    category: "Full-Stack",
-    description: ""
-  },
+    "links": {
+      "github": "https://github.com/kagit00/schedule_x"
+    },
+
+    "year": 2024,
+    "category": "Full-Stack",
+    "description":""  
+}
+
 };
