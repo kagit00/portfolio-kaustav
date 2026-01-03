@@ -24,7 +24,7 @@ type ExperienceItem = {
 
 const experiences: ExperienceItem[] = [
     {
-        role: "Backend Engineer (Systems) | Full-Time",
+        role: "Independent Backend Engineer (Systems) | Self-Directed | Full-Time",
         company: "",
         period: "Mar 2024 – Present",
         location: "Remote",
