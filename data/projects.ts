@@ -210,7 +210,7 @@ Chats: {
     ],
 
     "links": {
-      "github": "https://github.com/kagit00/schedule_x"
+      "github": "https://github.com/kagit00/ai-resume-builder-backend"
     },
 
     "year": 2024,
