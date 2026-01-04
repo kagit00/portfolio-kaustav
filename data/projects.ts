@@ -49,7 +49,6 @@ export const projectDatabase: ProjectDatabase = {
       ],
 
       links: {
-          demo: "https://github.com/kagit00/schedule_x",
           docs: "https://github.com/kagit00/schedule_x/tree/master/docs",
           github: "https://github.com/kagit00/schedule_x/tree/master",
       },
@@ -103,7 +102,6 @@ export const projectDatabase: ProjectDatabase = {
   ],
 
   links: {
-          demo: "https://github.com/kagit00/schedule_x",
           docs: "https://github.com/kagit00/flairbit/tree/master/docs",
           github: "https://github.com/kagit00/flairbit/tree/master",
       },
@@ -158,7 +156,6 @@ Chats: {
   ],
 
   links: {
-          demo: "https://github.com/kagit00/schedule_x",
           docs: "https://github.com/kagit00/chats/tree/master/docs",
           github: "https://github.com/kagit00/chats/tree/master",
       },
