@@ -163,59 +163,6 @@ Chats: {
   year: 2025,
   category: "Distributed",
   description: "",
-},
-
-
-  "AI Resume Builder": {
-    "title": "AI Resume Builder",
-    "tagline": "LLM-assisted resume generation tool with full-stack CRUD workflows.",
-
-    "role": "Full-stack developer (solo)",
-
-    "problemStatement":
-      "Built to explore automating resume tailoring based on job descriptions, reducing repetitive manual edits while experimenting with LLM-assisted content generation.",
-
-    "metrics": [
-      { "value": "Full-Stack", "label": "Project Type" },
-      { "value": "LLM Integration", "label": "Core Focus" },
-      { "value": "Spring Boot", "label": "Backend" },
-      { "value": "Next.js", "label": "Frontend" }
-    ],
-
-    "overview":
-      "A full-stack application that accepts resumes and job descriptions, generates suggested resume content using structured LLM prompts, and manages iterative edits through standard CRUD workflows.",
-
-    "architecture":
-      "Monolithic architecture with a Next.js frontend and a Spring Boot backend responsible for resume management, prompt construction, and LLM API integration. PostgreSQL used for persistence, with a local Docker-based development setup.",
-
-    "designHighlights": [
-      "Separated prompt construction logic from controller and persistence layers for clarity and maintainability.",
-      "Designed structured prompt templates to improve consistency of generated resume content.",
-      "Implemented basic caching to avoid repeated LLM calls for identical inputs."
-    ],
-
-    "keyChallenges": [
-      "Handling inconsistent LLM output formats across different job descriptions.",
-      "Balancing prompt structure with flexibility in generated content.",
-      "Managing resume versioning during iterative user edits."
-    ],
-
-    "stack": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Java",
-      "Spring Boot",
-      "PostgreSQL"
-    ],
-
-    "links": {
-      "github": "https://github.com/kagit00/ai-resume-builder-backend"
-    },
-
-    "year": 2024,
-    "category": "Full-Stack",
-    "description":""  
 }
 
 };

@@ -2,7 +2,7 @@ export type ProjectKey =
   | "ScheduleX"
   |  "FlairBit"
   | "Chats"
-  | "AI Resume Builder"
+
  
 
 export interface Metric {
